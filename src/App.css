@@ -1,0 +1,585 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(243, 254, 255),
+    rgb(232, 247, 252),
+    rgb(215, 240, 243)
+  );
+  background-size: cover;
+  max-width: 100%;
+  height: auto;
+}
+.App {
+  width: 100%;
+  height: 100%;
+  font-family: "Cairo", sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.carousel {
+  width: 100%;
+  overflow: scroll;
+  flex-wrap: nowrap;
+  display: flex;
+}
+.carousel img {
+  margin: 10px;
+  width: 100px;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.me-2:focus {
+  box-shadow: none;
+}
+.accordion-button {
+  position: relative;
+  overflow: "hidden";
+}
+.accordion-button:hover {
+  background-color: #cce6e9;
+}
+.accordion-button::after {
+  left: 15px;
+  position: absolute;
+  padding: 5px;
+}
+.header {
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+}
+.header h1 {
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+.header p {
+  font-size: 1.2rem;
+}
+.footer {
+  text-align: center;
+  margin: 10px auto;
+}
+.footer button {
+  background-color: red;
+  border: none;
+  padding: 5px 30px;
+  border-radius: 5px;
+  color: white;
+}
+.Iconcomp {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+.Iconcomp .icon {
+  font-size: 50px;
+  color: rgb(80, 80, 181);
+}
+.Iconcomp span {
+  border-top: solid 2px #d39999;
+  width: 40px;
+  margin: 5px auto;
+  display: block;
+}
+.heading {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.heading .icon {
+  color: #33849f;
+  font-size: 40px;
+  text-align: right;
+}
+.heading input {
+  width: 100%;
+  border: 1px solid #79bbcb;
+  border-radius: 10px;
+  padding: 5px;
+  outline: none;
+}
+.heading input:focus {
+  box-shadow: 0px 0px 10px #6ae1ff;
+  transition: 0.3s;
+}
+.headtitle {
+  text-align: center;
+  height: auto;
+  box-shadow: 0px 5px 10px #b7f4ffb5;
+}
+.headtitle h1 {
+  display: inline;
+  font-size: 25px;
+}
+
+.bodycontain {
+  background-color: #26484f;
+  color: white;
+  text-align: center;
+  height: 100%;
+}
+
+.bodycontain h1 {
+  font-size: 30px;
+  color: rgb(88, 88, 218);
+  width: 50%;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 20px;
+}
+.bodycontain .icon {
+  color: #135c66;
+  font-size: 10px;
+  background-color: #6ae1ff;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 20px 10px;
+}
+.bodycontain button,
+.bttn {
+  background-color: blue;
+  border: none;
+  width: 40%;
+  border-radius: 5px;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  padding: 5px;
+}
+button:hover {
+  box-shadow: 0px 0px 5px #468da0;
+  transition: 0.3s;
+  background-color: rgb(0, 0, 106);
+}
+.bodycontain p {
+  font-size: 15px;
+  color: rgb(90, 106, 142);
+  margin: 15px;
+}
+
+.bodycontain img {
+  margin-top: 50px;
+  width: 90%;
+}
+.signal {
+  position: relative;
+}
+.signal span {
+  background-color: rgb(98, 98, 188);
+  width: 17px;
+  height: 17px;
+  font-size: 12px;
+  color: #fff;
+  box-sizing: border-box;
+  position: absolute;
+  top: -2px;
+  border-radius: 50%;
+  right: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.textcont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logo {
+  width: 50%;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 999;
+  left: 0%;
+  top: 0%;
+  padding: 15px 20px;
+  background-color: transparent;
+  width: 100%;
+}
+
+.my-element,
+.head {
+  display: inline-block;
+  margin: 0 0.5rem;
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2.5s; /* don't forget to set a duration! */
+}
+
+.slide {
+  padding-top: 200px;
+  background-image: url("./DocorMain/image/slider.jpg");
+  background-size: cover;
+  transform: scale(1.2);
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  right: 0px;
+  color: #8ed9ff;
+}
+
+.slide h1 {
+  display: block;
+}
+.slide h1:first-child {
+  animation: backInRight;
+  color: rgb(42, 91, 126);
+  font-weight: 600;
+  font-size: 3rem;
+  margin: 10% 0% 0% 20%;
+  animation-duration: 1.5s;
+}
+.con {
+  animation: zoomInDown;
+  animation-duration: 2s;
+}
+.slide h1:nth-child(2) {
+  animation: backInLeft;
+  color: rgb(70, 119, 150);
+  font-weight: 600;
+  font-size: 2.5rem;
+  animation-duration: 1.5s;
+  margin: 2% 0% 0% 25%;
+}
+
+@media only screen and (max-width: 880px) {
+  .slide h1:first-child {
+    margin: 1% 0% 0% 10%;
+    font-size: 1.8rem;
+    padding: 20px;
+  }
+  .slide h1:nth-child(2) {
+    margin: 1% 0% 0% 10%;
+    font-size: 1.3rem;
+    padding: 20px;
+  }
+}
+
+/*container style */
+
+.filter {
+  animation: heartBeat;
+  animation-duration: 1.5s;
+}
+/*
+
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 171, 0.458);
+  position: absolute;
+  top: 0px;
+  padding: 20px;*/
+
+.Specialties {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  padding: 50px 10px;
+  margin-top: 0px;
+}
+.cantizm {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  column-gap: 1%;
+  padding: 50px 10px;
+  margin-top: 0px;
+}
+
+.box {
+  position: relative;
+  background-color: #dff6ff;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  text-align: right;
+  padding: 30px;
+  box-shadow: 2px 2px 7px #cdc4c4;
+  transition: 0.3s;
+  border: none;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  transition: 0.4s;
+  box-shadow: 0px 8px 10px #428fb350;
+}
+.logolink {
+  max-width: 20%;
+}
+.serbtn {
+  padding: 16px 45px;
+}
+@media only screen and (max-width: 1122px) {
+  .serbtn {
+    padding: 14px 10px;
+  }
+  .Specialties {
+    height: 250vh;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .Specialties {
+    margin-top: 4%;
+  }
+  .box {
+    margin: 2%;
+  }
+  .logolink {
+    max-width: 30%;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .Specialties {
+    margin-top: 50%;
+  }
+  .serbtn {
+    padding: 14px 40px;
+  }
+  .box {
+    width: 80%;
+    margin-top: 2%;
+  }
+
+  .logolink {
+    max-width: 40%;
+  }
+}
+@media only screen and (max-width: 684px) {
+  .Specialties {
+    margin-top: 55%;
+  }
+  .box:first-child {
+    width: 80%;
+    margin-top: 10%;
+  }
+
+  .logolink {
+    max-width: 50%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .Specialties {
+    margin-top: 70%;
+  }
+  .box:first-child {
+    width: 80%;
+    margin-top: 10%;
+  }
+  .logolink {
+    max-width: 60%;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .Specialties {
+    margin-top: 60%;
+  }
+  .box {
+    margin-top: 10%;
+  }
+  .box:first-child {
+    margin-top: 40%;
+  }
+  .logolink {
+    max-width: 70%;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .Specialties {
+    margin-top: 72%;
+  }
+  .box {
+    margin-top: 10%;
+  }
+  .box:first-child {
+    margin-top: 40%;
+  }
+  .logolink {
+    max-width: 72%;
+  }
+}
+.boxicon {
+  font-size: 23px;
+  top: -145px;
+  right: -20px;
+  position: absolute;
+  box-shadow: 3px 3px 5px #70a8c250;
+  border-radius: 10px;
+}
+.box a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #377e9f;
+  padding: 10px;
+  font-weight: 700;
+}
+.box p {
+  padding: 12px 30px;
+  font-size: 18px;
+  color: #306c88;
+}
+
+.alltec {
+  text-align: center;
+  padding-bottom: 100px;
+}
+.alltec button,
+.doctor div button {
+  background-color: rgba(255, 0, 0, 0.694);
+  padding: 1px 20px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+  display: flex;
+  gap: 10px;
+}
+
+.overlay {
+  background-image: url("./DocorMain/image/slider2.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 50vh;
+  color: #ffffff;
+}
+@media only screen and (max-width: 1000px) {
+  .overlay {
+    height: auto;
+  }
+}
+
+.minimumslide {
+  width: 100%;
+  text-align: center;
+}
+
+.foicon {
+  width: 30px;
+  height: 30px;
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 30px;
+  border: 1.5px solid #ffffff;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.minimumslide h1 {
+  font-size: 33px;
+  font-weight: 800;
+}
+.minimumslide p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.foicon:hover {
+  background-color: #fff;
+  color: #132b8a;
+  transition: 0.3s;
+}
+.bod {
+  background-image: url("./DocorMain/image/fun-bg.jpg");
+}
+.page-footer {
+  background-color: #09004ace;
+  color: #fff;
+}
+.page-footer2 {
+  background-color: #09004a75;
+  color: #fff;
+}
+.page-footer a {
+  text-decoration: none;
+  color: #b2d0ff;
+  transition: 0.2s;
+}
+.page-footer a:hover {
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.2s;
+}
+
+.NavLink,
+.link {
+  padding: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #003b53;
+}
+.NavLink:hover {
+  color: rgb(168, 0, 0);
+}
+.active {
+  color: rgb(148, 0, 0);
+  border-bottom: 2px solid #d4bbbb;
+  font-weight: 800;
+}
+.tic {
+  display: block;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+.tic:last-child {
+  margin-bottom: 20px;
+}
+
+.form-select {
+  --bs-form-select-bg-img: "none";
+}
+
+.email {
+  width: 90%;
+  color: #132b8a;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px #ccc;
+  min-height: 50vh;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.click:hover {
+  background-color: #dedaff;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.overlayStyle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.carouselStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
