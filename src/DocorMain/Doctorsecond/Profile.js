@@ -5,7 +5,14 @@ import {
   faStar,
   faUser,
   faStethoscope,
+  faCircleXmark,
+  faRotateLeft,
   faMagnifyingGlass,
+  faExpand,
+  faArrowsUpDown,
+  faRotateRight,
+  faArrowsLeftRight,
+  faShare,
 } from "@fortawesome/free-solid-svg-icons";
 import images from "../image/slider.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -56,6 +63,29 @@ function Profile() {
       }}
     />
   ));
+
+  function RotateLeft() {
+    let lage = document.getElementById("lage");
+    lage.style.transform += "rotate(90deg)";
+    lage.style.transition = "0.5s";
+  }
+
+  function RotateRight() {
+    let lage = document.getElementById("lage");
+    lage.style.transform += "rotate(-90deg)";
+    lage.style.transition = "0.5s";
+  }
+  function rotx() {
+    let lage = document.getElementById("lage");
+    lage.style.transform += "rotatex(180deg)";
+    lage.style.transition = "0.5s";
+  }
+  function roty() {
+    let lage = document.getElementById("lage");
+    lage.style.transform += "rotatey(180deg)";
+    lage.style.transition = ".5s";
+  }
+
   return (
     <div style={{ minHeight: "100vh", paddingTop: "120px" }}>
       <div
@@ -138,15 +168,67 @@ function Profile() {
                       <img
                         src={imagesdoc[selectedIndex].image}
                         alt=''
+                        id='lage'
                         style={carouselImageStyle}
                       />
                       <button onClick={handleNext} style={navButtonStyle}>
                         ›
                       </button>
                     </div>
-                    <button onClick={handleClose} style={closeButtonStyle}>
-                      ✖
-                    </button>
+                    <div className='headericon'>
+                      <FontAwesomeIcon
+                        onClick={handleClose}
+                        className='btnClose'
+                        icon={faCircleXmark}
+                      />
+                      <FontAwesomeIcon
+                        className='btnClose'
+                        icon={faRotateRight}
+                        onClick={RotateRight}
+                      />
+                      <FontAwesomeIcon
+                        className='btnClose'
+                        icon={faRotateLeft}
+                        onClick={RotateLeft}
+                      />
+                      <FontAwesomeIcon className='btnClose' icon={faExpand} />
+                      <FontAwesomeIcon
+                        className='btnClose'
+                        icon={faArrowsUpDown}
+                        onClick={rotx}
+                      />
+                      <FontAwesomeIcon
+                        className='btnClose'
+                        icon={faArrowsLeftRight}
+                        onClick={roty}
+                      />
+                      <FontAwesomeIcon className='btnClose' icon={faShare} />
+                      <div
+                        className='btnClose'
+                        style={{
+                          left: "30px",
+                          position: "absolute",
+                          fontSize: "20px",
+                          padding: "2px",
+                        }}
+                      >
+                        {8}/{selectedIndex + 1}
+                      </div>
+                    </div>
+                    <div className='galleryWrap'>
+                      {imagesdoc.map((img, index) => (
+                        <img
+                          src={img.image}
+                          alt=''
+                          key={index}
+                          className='single'
+                          onClick={() => handleImageClick(index)}
+                          style={{
+                            cursor: "pointer", // Adding a pointer cursor to indicate clickability
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -188,58 +270,6 @@ function Profile() {
             >
               احجز الان
             </button>
-          </div>
-          <div>
-            <span style={{ color: "#40839a" }}>
-              <FontAwesomeIcon
-                icon={faUser}
-                style={{ marginLeft: "10px" }}
-                Spin
-              />
-            </span>
-            <span style={{ color: "#40839a" }}>نبذة عن الطبيب: </span>
-            <p>استشارى جراحه الانف والاذن والحنجرة ومناظير الجيوب الأنفية</p>
-          </div>
-          <div>
-            <span>
-              <FontAwesomeIcon
-                icon={faStethoscope}
-                style={{ marginLeft: "10px", color: "#40839a" }}
-                Spin
-              />
-            </span>
-            <span>
-              دكتور اطفال وحديثي الولادة, سكر وغدد صماء في المعادي, القاهرة
-            </span>
-          </div>
-          <div style={{ marginTop: "40px" }}>
-            <span style={{ color: "#40839a" }}>
-              <FontAwesomeIcon
-                icon={faUser}
-                style={{ marginLeft: "10px" }}
-                Spin
-              />
-            </span>
-            <span> خدمات الطبيب:</span>
-            <p style={{ marginRight: "30px" }}>
-              متابعة الأطفال ذوي الاحتياجات الخاصة: متلازمة داون فرط الحركه
-              التوحد صعوبات التعلم تأخر الكلام (أمراض التخاطب) تنمية مهارات
-              تعديل سلوك تشخيص المتلازمات والأمراض الوراثية: متلازمة داون تيرنر
-              كلينفلتر كروموسوم أكس الهش وغيرها من المتلازمات أمراض الدم
-              الوراثية : أنيميا البحر الأبيض المتوسط (ثلاثيميا) أنيميا الخلايا
-              المنجلية انيميا الفول الهيموفيليا أمراض نقص الصفائح الدموية و
-              غيرها من أمراض الدم الوراثية تشخيص و متابعة حالات أمراض الغدد
-              الصماء الوراثية: نقص هرمون الغدة الدرقية للأطفال نقص هرمون النمو
-              خلل افرازات الغدة الكظرية فوق الكلوية وغيرها من امراض الغدد الصماء
-              الوراثية تشخيص ومتابعة حالات ضمور العضلات الوراثى مثل مرض دوشين
-              وبيكر و غيرها من أمراض ضمور العضلات الوراثية تشخيص ومتابعة حالات
-              الشلل الدماغى بأنواعه المختلفة التأخر الذهنى بأسبابه المختلفة
-              تشخيص حالات ضعف السمع الوراثى الإرشاد الوراثى الوقائى لتجنب حدوث
-              الأمراض الوراثية والتشوهات الخلقية وخاصة فى حالة وجود تاريخ طبى
-              يشير الى حدوث مرض وراثى فى الأجيال المختلفة بالعائلة وكذلك فى حالة
-              تعدد زواج الأقارب داخل العائلة الواحدة مما يعطى فرصة لانتقال الجين
-              المصاب من جيل الى أخر
-            </p>
           </div>
         </div>
 
@@ -328,71 +358,12 @@ function Profile() {
             </button>
           </ListGroup>
         </div>
-        <div
-          style={{ fontSize: "25px" }}
-          className='col-lg-12 col-md-12 col-sm-12 '
-        >
-          <span style={{ color: "#40839a" }}>
-            <FontAwesomeIcon
-              icon={faStar}
-              style={{ marginLeft: "10px" }}
-              Spin
-            />
-          </span>
-          <span style={{ color: "#40839a" }}>التقييمات :</span>
-          <div
-            style={{
-              backgroundColor: " #ecf9ff",
-              width: "100%",
-              padding: "10px",
-              margin: "20px",
-              borderRadius: "15px",
-            }}
-          >
-            <div
-              style={{ borderBottom: "#ccc 1px solid", marginBottom: "5px" }}
-            >
-              <span style={{ fontSize: "18px", color: "#296f8a" }}>
-                magdiperper{" "}
-              </span>
-              <span style={{ fontSize: "12px" }}>12:32:03</span>
-            </div>
-            <span
-              style={{
-                fontSize: "20px",
-                marginRight: "30px",
-                color: "#27547b",
-              }}
-            >
-              this is the best doctor in cairo
-            </span>
-          </div>
-          <div
-            style={{
-              backgroundColor: " #ecf9ff",
-              width: "100%",
-              padding: "10px",
-              margin: "20px",
-              borderRadius: "15px",
-            }}
-          >
-            <div
-              style={{ borderBottom: "#ccc 1px solid", marginBottom: "5px" }}
-            >
-              <span style={{ fontSize: "18px", color: "#296f8a" }}>
-                magdiperper{" "}
-              </span>
-              <span style={{ fontSize: "12px" }}>12:32:03</span>
-            </div>
-            <span
-              style={{
-                fontSize: "20px",
-                marginRight: "30px",
-                color: "#27547b",
-              }}
-            >
-              this is the best doctor in cairo
-            </span>
+        <div className='col-lg-12 col-md-12 col-sm-12 row'>
+          <div className='row' style={{ textAlign: "center" }}>
+            <div className='col-lg-3 col-md-3 col-sm-6'>الملخص</div>
+            <div className='col-lg-3 col-md-3 col-sm-6'>المواقع</div>
+            <div className='col-lg-3 col-md-3 col-sm-6'>المراجعات</div>
+            <div className='col-lg-3 col-md-3 col-sm-6'>ساعات العمل</div>
           </div>
         </div>
       </div>
@@ -415,16 +386,4 @@ const navButtonStyle = {
   padding: "0px 25px 5px 25px",
   borderRadius: "50%",
   cursor: "pointer",
-};
-
-const closeButtonStyle = {
-  position: "absolute",
-  top: "20px",
-  right: "20px",
-  background: "none",
-  border: "none",
-  color: "white",
-  fontSize: "2rem",
-  cursor: "pointer",
-  padding: "0 10px ",
 };

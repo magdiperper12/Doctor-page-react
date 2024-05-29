@@ -17,7 +17,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export function Contain() {
-  const [raitHeight, setRaitHeight] = useState("220vh");
+  const [raitHeight, setRaitHeight] = useState("197vh");
   const [over, setover] = useState("hidden");
 
   const handleButtonClick = () => {
@@ -84,98 +84,94 @@ export function Contain() {
         }}
       >
         <div
-          className='filter m-4'
+          className='filter '
           style={{
             backgroundColor: "rgb(15 117 189)",
             borderRadius: "30px",
             boxShadow: "5px 5px 10px rgba(0, 0, 171, 0.258)",
             position: "absolute",
             top: "0px",
+            width: "80%",
             padding: "20px",
           }}
         >
-          <div style={{ margin: "5px 20px" }}>
-            <Row className='g-2 p-2'>
-              <Col
+          <div style={{ margin: "5px 0px" }}>
+            <Row className='g-2 pt-5 pb-5 px-1'>
+              <div
                 md
-                style={{ overflow: "hidden", margin: "23px 0px 0px 20px" }}
-                className='order-lg-first order-md-last order-sm-last'
+                style={{
+                  overflow: "hidden",
+                  margin: "10px 0 0 17px",
+                  textAlign: "center",
+                }}
+                className='order-lg-first order-md-last order-sm-last col-lg-2 col-md-6 col-sm-12'
               >
                 <Button className='serbtn' variant='outline-light'>
-                  Search
+                  بحث
                 </Button>
-              </Col>
-              <Col md style={{ overflow: "hidden" }} className='m-4'>
+              </div>
+
+              <Col
+                md
+                style={{ overflow: "hidden" }}
+                className='mt-2 mb-2 ml-0 mr-5'
+              >
                 <Form.Control
                   type='text'
                   onChange={(e) => setsearch(e.target.value)}
                   placeholder='اسم الطبيب'
-                  style={{
-                    color: "#000",
-                    backgroundColor: " #fff",
-                    border: "none",
-                    padding: "17px",
-                    textAlign: "right",
-                  }}
+                  style={commonStyle}
                 />
               </Col>
 
-              <Col md style={{ overflow: "hidden" }} className='m-4'>
+              <Col
+                md
+                style={{ overflow: "hidden" }}
+                className='mt-2 mb-2 ml-0 mr-2'
+              >
+                <Form.Control
+                  type='text'
+                  placeholder='المدينه'
+                  style={commonStyle}
+                />
+              </Col>
+
+              <Col
+                md
+                style={{ overflow: "hidden" }}
+                className='mt-2 mb-2 ml-0 mr-2'
+              >
                 <Form.Select
                   aria-label='Floating label select example'
-                  style={{
-                    color: "#000",
-                    backgroundColor: " #fff",
-                    border: "none",
-                    padding: "17px",
-                    textAlign: "right",
-                  }}
+                  style={commonStyle}
                   onChange={(e) => setsearch(e.target.value)}
                 >
                   <option style={{ position: "relative", width: "100%" }}>
                     <span style={{ marginRight: "40px" }}>المحافظه</span>
                   </option>
-                  {Box.map((cont, index) => {
-                    return (
-                      <option value={index} key={index}>
-                        {cont.city}
-                      </option>
-                    );
-                  })}
+                  {Box.map((cont, index) => (
+                    <option value={index} key={index}>
+                      {cont.city}
+                    </option>
+                  ))}
                 </Form.Select>
               </Col>
-              <Col md style={{ overflow: "hidden" }} className='m-4'>
-                <Form.Control
-                  type='text'
-                  placeholder='المدينه'
-                  style={{
-                    color: "#000",
-                    backgroundColor: " #fff",
-                    border: "none",
-                    textAlign: "right",
-                    padding: "17px",
-                  }}
-                />
-              </Col>
-              <Col md style={{ overflow: "hidden" }} className='m-4'>
+
+              <Col
+                md
+                style={{ overflow: "hidden" }}
+                className='mt-2 mb-2 ml-0 mr-2 '
+              >
                 <Form.Select
                   aria-label='Floating label select example'
-                  style={{
-                    color: "#000",
-                    backgroundColor: " #fff",
-                    border: "none",
-                    padding: "17px",
-                    textAlign: "right",
-                  }}
+                  style={commonStyle}
                 >
                   <option>التخصص</option>
-                  {Box.map((cont, index) => {
-                    return (
-                      <option value={index} key={index}>
-                        {cont.contry}
-                      </option>
-                    );
-                  })}
+                  {Box.map((cont, index) => (
+                    <option value={index} key={index}>
+                      {cont.contry}
+                    </option>
+                  ))}
                 </Form.Select>
               </Col>
             </Row>
@@ -263,3 +259,88 @@ export function Minmumslide() {
     </div>
   );
 }
+const commonStyle = {
+  color: "#000",
+  backgroundColor: "#fff",
+  border: "none",
+  padding: "17px",
+  textAlign: "right",
+};
+
+/*import React from 'react';
+import { Row, Col, Button, Form } from 'react-bootstrap';
+
+const SearchComponent = ({ setsearch, Box }) => {
+  const commonStyle = {
+    color: "#000",
+    backgroundColor: "#fff",
+    border: "none",
+    padding: "17px",
+    textAlign: "right",
+  };
+
+  return (
+    <Row className="g-2 pt-5 pb-5 px-1">
+      <Col
+        md
+        style={{ overflow: "hidden", margin: "10px 0 0 17px" }}
+        className="order-lg-first order-md-last order-sm-last"
+      >
+        <Button className="serbtn" variant="outline-light">
+          بحث
+        </Button>
+      </Col>
+
+      <Col md style={{ overflow: "hidden" }} className="m-2 ">
+        <Form.Control
+          type="text"
+          onChange={(e) => setsearch(e.target.value)}
+          placeholder="اسم الطبيب"
+          style={commonStyle}
+        />
+      </Col>
+
+      <Col md style={{ overflow: "hidden" }} className="m-2">
+        <Form.Select
+          aria-label="Floating label select example"
+          style={commonStyle}
+          onChange={(e) => setsearch(e.target.value)}
+        >
+          <option style={{ position: "relative", width: "100%" }}>
+            <span style={{ marginRight: "40px" }}>المحافظه</span>
+          </option>
+          {Box.map((cont, index) => (
+            <option value={index} key={index}>
+              {cont.city}
+            </option>
+          ))}
+        </Form.Select>
+      </Col>
+
+      <Col md style={{ overflow: "hidden" }} className="m-2">
+        <Form.Control
+          type="text"
+          placeholder="المدينه"
+          style={commonStyle}
+        />
+      </Col>
+
+      <Col md style={{ overflow: "hidden" }} className="m-2">
+        <Form.Select
+          aria-label="Floating label select example"
+          style={commonStyle}
+        >
+          <option>التخصص</option>
+          {Box.map((cont, index) => (
+            <option value={index} key={index}>
+              {cont.contry}
+            </option>
+          ))}
+        </Form.Select>
+      </Col>
+    </Row>
+  );
+};
+
+export default SearchComponent;
+*/

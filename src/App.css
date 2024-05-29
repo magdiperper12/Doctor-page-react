@@ -327,7 +327,7 @@ button:hover {
   max-width: 20%;
 }
 .serbtn {
-  padding: 16px 45px;
+  padding: 13px 85px;
 }
 @media only screen and (max-width: 1122px) {
   .serbtn {
@@ -582,4 +582,51 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.headericon {
+  z-index: 1;
+  width: 100%;
+  background-color: black;
+  padding: 5px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 0px;
+  display: flex;
+  gap: 20px;
+  direction: rtl;
+  padding-right: 30px;
+}
+.btnClose {
+  cursor: pointer;
+  padding: 3px;
+  padding-right: 10px;
+  font-size: 23px;
+  opacity: 0.6;
+  color: #ffffff;
+  z-index: 9999;
+}
+
+.galleryWrap {
+  gap: 10px;
+  position: absolute;
+  bottom: 10px;
+}
+.galleryWrap .single {
+  width: 100px;
+  height: 60px;
+  cursor: pointer;
+  bottom: 10px;
+  filter: grayscale(20);
+}
+
+.galleryWrap .single img {
+  max-width: 100%;
+}
+
+.galleryWrap .single:hover {
+  transform: scale(1.02);
+  transition: 0.3s;
+  filter: grayscale(0);
 }
