@@ -19,7 +19,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route
-          path='/'
+          path='/Doctor-page-react'
           element={
             <div className='App'>
               <Navbare />
